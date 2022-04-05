@@ -1,6 +1,9 @@
 import random
-import MyModule
 
-print(random.randint(1, 10))
-print(MyModule.pi)
-print(random.random())
+
+randomSide = random.randint(0, 1)
+
+if randomSide == 1:
+    print("Heads")
+else:
+    print("Tails")
