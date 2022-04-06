@@ -1,9 +1,9 @@
 import random
 
+namesString = input("Give me everybody's names, seperated by a comma. ")
+names = namesString.split(',')
 
-randomSide = random.randint(0, 1)
-
-if randomSide == 1:
-    print("Heads")
-else:
-    print("Tails")
+numItems = len(names)
+randomChoice = random.randint(0, numItems-1)
+personWhoWillPay = names[randomChoice]
+print(f"{personWhoWillPay} is going to buy the meal today.")
