@@ -1,14 +1,26 @@
-row1 = [" ", " ", " "]
-row2 = [" ", " ", " "]
-row3 = [" ", " ", " "]
-map = [row1, row2, row3]
-print(f"{row1}\n{row2}\n{row3}")
-position = input("Where do you want to put the treasure? ")
+import random
 
-horizontal = int(position[0])
-vertical = int(position[1])
 
-selectedRow = map[vertical-1]
-selectedRow[horizontal-1] = "X"
+userChoice = int(
+    input("What do you choose? Type 0 for rock, 1 for paper and 2 for scissors.\n"))
 
-print(f"{row1}\n{row2}\n{row3}")
+computorChoice = random.randint(0, 2)
+if computorChoice == 0:
+    print("Computer chose rock")
+elif computorChoice == 1:
+    print("Computer chose paper")
+else:
+    print("Computer chose scissors")
+
+if userChoice >= 3 or userChoice < 0:
+    print("You typed an invalid number, you lose")
+elif userChoice == 0 and computorChoice == 2:
+    print("You win")
+elif computorChoice == 0 and userChoice == 2:
+    print("You lose")
+elif computorChoice > userChoice:
+    print("You lose")
+elif userChoice > computorChoice:
+    print("You win")
+elif computorChoice == userChoice:
+    print("It's a draw")
