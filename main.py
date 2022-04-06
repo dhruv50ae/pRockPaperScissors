@@ -1,9 +1,14 @@
-import random
+row1 = [" ", " ", " "]
+row2 = [" ", " ", " "]
+row3 = [" ", " ", " "]
+map = [row1, row2, row3]
+print(f"{row1}\n{row2}\n{row3}")
+position = input("Where do you want to put the treasure? ")
 
-namesString = input("Give me everybody's names, seperated by a comma. ")
-names = namesString.split(',')
+horizontal = int(position[0])
+vertical = int(position[1])
 
-numItems = len(names)
-randomChoice = random.randint(0, numItems-1)
-personWhoWillPay = names[randomChoice]
-print(f"{personWhoWillPay} is going to buy the meal today.")
+selectedRow = map[vertical-1]
+selectedRow[horizontal-1] = "X"
+
+print(f"{row1}\n{row2}\n{row3}")
